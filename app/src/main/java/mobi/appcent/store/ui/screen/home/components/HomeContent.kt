@@ -1,5 +1,6 @@
 package mobi.appcent.store.ui.screen.home.components
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -34,8 +35,11 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import mobi.appcent.store.R
+import mobi.appcent.store.data.model.Product
 import mobi.appcent.store.data.model.ProductTag
 import mobi.appcent.store.ui.components.AppTopBar
+import mobi.appcent.store.ui.components.ProductList
+import mobi.appcent.store.ui.components.SquaredIconButton
 import mobi.appcent.store.ui.screen.home.HomeUiState
 import mobi.appcent.store.ui.screen.home.HomeViewModel
 import mobi.appcent.store.ui.theme.outerSpace
@@ -53,17 +57,13 @@ fun HomeContent(
         topBar = {
             AppTopBar(
                 actions = {
-                    Card(
-                        onClick = {  },
-                        colors = CardDefaults.cardColors(
-                            containerColor = outerSpace
-                        ),
-                        shape = MaterialTheme.shapes.medium,
-                        modifier = Modifier.size(44.dp)
-                    ) {
-                        Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
-                            Icon(painter = painterResource(id = R.drawable.ic_user), contentDescription = "Profile")
-                        }
+                    SquaredIconButton(icon = {
+                        Icon(
+                            painter = painterResource(id = R.drawable.ic_user),
+                            contentDescription = "Profile"
+                        )
+                    }) {
+
                     }
                     Spacer(modifier = Modifier.width(8.dp))
                 },
@@ -73,26 +73,24 @@ fun HomeContent(
                 navigationIcon = {
                     Row {
                         Spacer(modifier = Modifier.width(8.dp))
-                        Card(
-                            onClick = {  },
-                            colors = CardDefaults.cardColors(
-                                containerColor = outerSpace
-                            ),
-                            shape = MaterialTheme.shapes.medium,
-                            modifier = Modifier.size(44.dp)
-                        ) {
-                            Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
-                                Icon(painter = painterResource(id = R.drawable.ic_menu), contentDescription = "Menu")
-                            }
+                        SquaredIconButton(icon = {
+                            Icon(
+                                painter = painterResource(id = R.drawable.ic_menu),
+                                contentDescription = "Menu"
+                            )
+                        }) {
+
                         }
                     }
                 },
             )
         }
     ) {
-        Column(modifier = Modifier.padding(it)) {
+        Column(modifier = Modifier
+            .padding(top = it.calculateTopPadding())
+        ) {
             HomeHeader(
-                onSearchTextChanged = {searchText ->
+                onSearchTextChanged = { searchText ->
 
                 }
             )
@@ -104,7 +102,20 @@ fun HomeContent(
                     ProductTag("Man"),
                     ProductTag("Woman")
                 ),
-                onTagSelectionChanged = {selectedTag ->
+                onTagSelectionChanged = { selectedTag ->
+
+                }
+            )
+            ProductList(
+                list = listOf(
+                    Product("https://picsum.photos/id/237/200/300", 300),
+                    Product("https://picsum.photos/id/237/200/300", 200),
+                    Product("https://picsum.photos/id/237/200/300", 200),
+                    Product("https://picsum.photos/id/237/200/300", 100),
+                    Product("https://picsum.photos/id/237/200/300", 300),
+                    Product("https://picsum.photos/id/237/200/300", 300),
+                ),
+                onClick = {
 
                 }
             )

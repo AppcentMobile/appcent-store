@@ -3,6 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="mobi.appcent.store">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:name=".StoreApplication"
         android:allowBackup="true"

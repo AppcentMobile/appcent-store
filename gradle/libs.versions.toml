@@ -16,6 +16,7 @@ androidx-navigation-compose = "2.5.3"
 lifecycle-compose = "2.6.1"
 accompanist-navigation = "0.28.0"
 medusa-sdk = "1.0.1"
+coil-compose = "2.3.0"
 
 
 [libraries]
@@ -43,6 +44,7 @@ navigation-compose = {group="androidx.navigation", name = "navigation-compose", 
 androidx-lifecycle-livedata = { group = "androidx.lifecycle", name = "lifecycle-livedata-ktx", version.ref = "lifecycle-compose" }
 accompanist-navigation-animation = { group = "com.google.accompanist", name = "accompanist-navigation-animation", version.ref = "accompanist-navigation" }
 medusa-client-sdk = {group = "com.github.AppcentMobile", name = "medusa-java-sdk", version.ref = "medusa-sdk"}
+coil = {group = "io.coil-kt", name = "coil-compose", version.ref = "coil-compose"}
 
 [plugins]
 com-android-application = { id = "com.android.application", version.ref = "com-android-application" }

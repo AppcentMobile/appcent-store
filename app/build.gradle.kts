@@ -67,7 +67,7 @@ dependencies {
     implementation(libs.accompanist.navigation.animation)
 
     implementation(libs.medusa.client.sdk)
-
+    implementation(libs.coil)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.test.ext.junit)
