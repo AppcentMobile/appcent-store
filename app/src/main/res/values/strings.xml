@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Appcent Store</string>
+
+
+    <!-- Home -->
+    <string name="home_search_placeholder">Ürün, kategori veya marka ara</string>
+</resources>
