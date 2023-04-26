@@ -108,12 +108,12 @@ fun HomeContent(
             )
             ProductList(
                 list = listOf(
-                    Product("https://picsum.photos/id/237/200/300", 300),
-                    Product("https://picsum.photos/id/237/200/300", 200),
-                    Product("https://picsum.photos/id/237/200/300", 200),
-                    Product("https://picsum.photos/id/237/200/300", 100),
-                    Product("https://picsum.photos/id/237/200/300", 300),
-                    Product("https://picsum.photos/id/237/200/300", 300),
+                    Product("https://picsum.photos/seed/picsum/200/300", 300),
+                    Product("https://picsum.photos/seed/picsum/200/300", 200),
+                    Product("https://picsum.photos/seed/picsum/200/300", 200),
+                    Product("https://picsum.photos/seed/picsum/200/300", 100),
+                    Product("https://picsum.photos/seed/picsum/200/300", 300),
+                    Product("https://picsum.photos/seed/picsum/200/300", 300),
                 ),
                 onClick = {
 

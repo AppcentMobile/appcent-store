@@ -1,6 +1,8 @@
 package mobi.appcent.store.ui.screen.collections
 
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
 import mobi.appcent.store.common.base.BaseScreen
 import mobi.appcent.store.ui.screen.collections.components.CollectionsContent
 
@@ -10,7 +12,11 @@ import mobi.appcent.store.ui.screen.collections.components.CollectionsContent
 class CollectionsScreen: BaseScreen<CollectionsViewModel>() {
     @Composable
     override fun Screen() {
-        CollectionsContent()
+        val uiState by viewModel.uiState.collectAsState()
+
+        CollectionsContent(
+            uiState = uiState
+        )
     }
 
 }
