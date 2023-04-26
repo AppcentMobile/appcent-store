@@ -1,4 +1,4 @@
-package mobi.appcent.store.ui.screen.profile
+package mobi.appcent.store.ui.screen.collections
 
 import org.koin.androidx.viewmodel.dsl.viewModelOf
 import org.koin.dsl.module
@@ -6,6 +6,6 @@ import org.koin.dsl.module
 /**
  * Created by erenalpaslan on 21.04.2023
  */
-val profileModule = module {
-    viewModelOf(::SettingViewModel)
+val collectionsModule = module {
+    viewModelOf(::CollectionsViewModel)
 }

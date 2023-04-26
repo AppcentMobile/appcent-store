@@ -7,6 +7,6 @@ object Routes {
     const val splashRoute = "splash_route"
     const val homeRoute = "home_route"
     const val cartRoute = "cart_route"
-    const val favoritesRoute = "favorite_route"
-    const val settingRoute = "setting_route"
+    const val collectionsRoute = "collections_route"
+    const val profileRoute = "profile_route"
 }

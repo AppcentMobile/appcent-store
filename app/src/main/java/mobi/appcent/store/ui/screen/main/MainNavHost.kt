@@ -10,7 +10,7 @@ import com.google.accompanist.navigation.animation.AnimatedNavHost
 import mobi.appcent.store.core.navigation.AppNavigator
 import mobi.appcent.store.core.navigation.screen.Routes
 import mobi.appcent.store.ui.screen.cart.cartScreen
-import mobi.appcent.store.ui.screen.favorites.favoritesScreen
+import mobi.appcent.store.ui.screen.collections.favoritesScreen
 import mobi.appcent.store.ui.screen.home.homeScreen
 import mobi.appcent.store.ui.screen.profile.profileScreen
 import mobi.appcent.store.ui.screen.splash.splashScreen

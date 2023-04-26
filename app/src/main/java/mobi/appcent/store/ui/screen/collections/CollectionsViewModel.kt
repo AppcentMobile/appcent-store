@@ -1,9 +1,9 @@
-package mobi.appcent.store.ui.screen.favorites
+package mobi.appcent.store.ui.screen.collections
 
 import mobi.appcent.store.common.base.BaseViewModel
 
 /**
  * Created by erenalpaslan on 21.04.2023
  */
-class FavoritesViewModel: BaseViewModel() {
+class CollectionsViewModel: BaseViewModel() {
 }

@@ -3,7 +3,7 @@ package mobi.appcent.store
 import android.app.Application
 import mobi.appcent.store.core.navigation.navigationModule
 import mobi.appcent.store.ui.screen.cart.cartModule
-import mobi.appcent.store.ui.screen.favorites.catalogModule
+import mobi.appcent.store.ui.screen.collections.collectionsModule
 import mobi.appcent.store.ui.screen.home.homeModule
 import mobi.appcent.store.ui.screen.profile.profileModule
 import mobi.appcent.store.ui.screen.splash.splashModule
@@ -18,7 +18,7 @@ class StoreApplication: Application() {
         navigationModule,
         splashModule,
         homeModule,
-        catalogModule,
+        collectionsModule,
         cartModule,
         profileModule
     )

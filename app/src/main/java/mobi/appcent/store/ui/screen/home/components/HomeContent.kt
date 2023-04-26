@@ -59,8 +59,8 @@ fun HomeContent(
                 actions = {
                     SquaredIconButton(icon = {
                         Icon(
-                            painter = painterResource(id = R.drawable.ic_user),
-                            contentDescription = "Profile"
+                            painter = painterResource(id = R.drawable.ic_fav),
+                            contentDescription = "Favorites"
                         )
                     }) {
 

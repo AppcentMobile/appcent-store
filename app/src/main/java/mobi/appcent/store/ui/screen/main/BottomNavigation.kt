@@ -3,13 +3,10 @@ package mobi.appcent.store.ui.screen.main
 import androidx.annotation.DrawableRes
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.BoxScope
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.navigationBarsPadding
-import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Badge
-import androidx.compose.material3.BadgedBox
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.LocalContentColor
@@ -18,7 +15,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.unit.dp
 import mobi.appcent.store.R
 import mobi.appcent.store.core.navigation.AppNavigator
 import mobi.appcent.store.core.navigation.screen.Routes
@@ -38,23 +34,23 @@ enum class BottomNavigationScreens(
         label = "Home",
         route = Routes.homeRoute
     ),
+    COLLECTIONS(
+        icon = R.drawable.ic_category,
+        selectedIcon = R.drawable.ic_category,
+        label = "Collections",
+        route = Routes.collectionsRoute
+    ),
     CART(
         icon = R.drawable.ic_cart,
         selectedIcon = R.drawable.ic_cart,
         label = "Cart",
         route = Routes.cartRoute
     ),
-    FAVORITES(
-        icon = R.drawable.ic_fav,
-        selectedIcon = R.drawable.ic_fav,
-        label = "Favorites",
-        route = Routes.favoritesRoute
-    ),
-    SETTINGS(
-        icon = R.drawable.ic_setting,
-        selectedIcon =  R.drawable.ic_setting,
-        label = "Setting",
-        route = Routes.settingRoute
+    PROFILE(
+        icon = R.drawable.ic_profile,
+        selectedIcon =  R.drawable.ic_profile,
+        label = "Profile",
+        route = Routes.profileRoute
     )
 }
 
@@ -84,7 +80,9 @@ fun BottomNavigation(
                 BottomNavigationItem(
                     selected = currentRoute == screen.route,
                     onClick = {
-                        navigateToBottomTabs(screen.route)
+                        if (screen.route != currentRoute) {
+                            navigateToBottomTabs(screen.route)
+                        }
                     },
                     label = screen.label,
                     icon = screen.icon,
@@ -106,9 +104,9 @@ fun BottomNavigation(
 object BottomNavRoutes {
     val routes = listOf(
         Routes.homeRoute,
+        Routes.collectionsRoute,
         Routes.cartRoute,
-        Routes.favoritesRoute,
-        Routes.settingRoute
+        Routes.profileRoute
     )
 }
 

@@ -1,4 +1,4 @@
-package mobi.appcent.store.ui.screen.profile
+package mobi.appcent.store.ui.screen.collections
 
 import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.navigation.NavGraphBuilder
@@ -10,10 +10,14 @@ import org.koin.androidx.compose.koinViewModel
 /**
  * Created by erenalpaslan on 21.04.2023
  */
+fun AppNavigator.navigateToCatalog() {
+    this.navigate(Routes.collectionsRoute)
+}
+
 @OptIn(ExperimentalAnimationApi::class)
-fun NavGraphBuilder.profileScreen(navigator: AppNavigator) {
-    composable(route = Routes.settingRoute) {
-        SettingScreen().Create(
+fun NavGraphBuilder.favoritesScreen(navigator: AppNavigator) {
+    composable(route = Routes.collectionsRoute) {
+        CollectionsScreen().Create(
             navigator = navigator,
             viewModel = koinViewModel()
         )
