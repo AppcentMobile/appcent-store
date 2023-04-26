@@ -21,6 +21,7 @@ private val DarkColorScheme = darkColorScheme(
     onPrimaryContainer = cultured,
     tertiary = cultured,
     secondary = black,
+    onTertiary = arsenic
 )
 
 private val LightColorScheme = lightColorScheme(
@@ -38,24 +39,24 @@ fun AppcentStoreTheme(
     dynamicColor: Boolean = true,
     content: @Composable () -> Unit
 ) {
-    val colorScheme = when {
+    /*val colorScheme = when {
       dynamicColor && Build.VERSION.SDK_INT >= Build.VERSION_CODES.S -> {
         val context = LocalContext.current
         dynamicDarkColorScheme(context)
       }
       else -> DarkColorScheme
-    }
+    }*/
     val view = LocalView.current
     if (!view.isInEditMode) {
       SideEffect {
         val window = (view.context as Activity).window
-        window.statusBarColor = colorScheme.primary.toArgb()
+        window.statusBarColor = DarkColorScheme.primary.toArgb()
         WindowCompat.getInsetsController(window, view).isAppearanceLightStatusBars = darkTheme
       }
     }
 
     MaterialTheme(
-      colorScheme = colorScheme,
+      colorScheme = DarkColorScheme,
       typography = Typography,
       content = content
     )

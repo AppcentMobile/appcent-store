@@ -1,8 +1,13 @@
 package mobi.appcent.store.ui.components
 
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.layout.wrapContentWidth
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.Icon
@@ -20,7 +25,7 @@ import mobi.appcent.store.ui.theme.outerSpace
  */
 @Composable
 fun SquaredIconButton(
-    icon: @Composable () -> Unit,
+    icon: @Composable () -> Unit = {},
     onClick: () -> Unit
 ) {
     Card(
@@ -33,7 +38,11 @@ fun SquaredIconButton(
         shape = MaterialTheme.shapes.medium,
         modifier = Modifier.size(44.dp)
     ) {
-        Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
+        Row(
+            modifier = Modifier.fillMaxSize(),
+            horizontalArrangement = Arrangement.Center,
+            verticalAlignment = Alignment.CenterVertically
+        ) {
             icon()
         }
     }

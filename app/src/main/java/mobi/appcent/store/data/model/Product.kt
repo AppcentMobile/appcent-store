@@ -5,5 +5,6 @@ package mobi.appcent.store.data.model
  */
 data class Product(
     val imageUrl: String,
-    val minSize: Int
+    val minSize: Int,
+    val name: String? = null,
 )
