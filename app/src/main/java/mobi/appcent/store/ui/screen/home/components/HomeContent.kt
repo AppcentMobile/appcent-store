@@ -68,10 +68,10 @@ fun HomeContent(
                     Spacer(modifier = Modifier.width(8.dp))
                 },
                 title = {
-
+                    Text(text = "Appcent", style = MaterialTheme.typography.titleMedium)
                 },
                 navigationIcon = {
-                    Row {
+                    /*Row {
                         Spacer(modifier = Modifier.width(8.dp))
                         SquaredIconButton(icon = {
                             Icon(
@@ -81,7 +81,7 @@ fun HomeContent(
                         }) {
 
                         }
-                    }
+                    }*/
                 },
             )
         }
@@ -115,8 +115,8 @@ fun HomeContent(
                     Product("https://picsum.photos/seed/picsum/200/300", 300),
                     Product("https://picsum.photos/seed/picsum/200/300", 300),
                 ),
-                onClick = {
-
+                onClick = {product ->
+                    viewModel.onProductDetailClicked(product)
                 }
             )
         }

@@ -5,6 +5,7 @@ import mobi.appcent.store.core.navigation.navigationModule
 import mobi.appcent.store.ui.screen.cart.cartModule
 import mobi.appcent.store.ui.screen.collections.collectionsModule
 import mobi.appcent.store.ui.screen.home.homeModule
+import mobi.appcent.store.ui.screen.productdetail.productDetailModule
 import mobi.appcent.store.ui.screen.profile.profileModule
 import mobi.appcent.store.ui.screen.splash.splashModule
 import org.koin.core.context.startKoin
@@ -20,7 +21,8 @@ class StoreApplication: Application() {
         homeModule,
         collectionsModule,
         cartModule,
-        profileModule
+        profileModule,
+        productDetailModule
     )
 
     override fun onCreate() {

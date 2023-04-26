@@ -9,4 +9,5 @@ object Routes {
     const val cartRoute = "cart_route"
     const val collectionsRoute = "collections_route"
     const val profileRoute = "profile_route"
+    const val productDetailRoute = "product_detail_route"
 }

@@ -19,6 +19,9 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.SpanStyle
+import androidx.compose.ui.text.buildAnnotatedString
+import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.unit.dp
 import mobi.appcent.store.R
 
@@ -40,7 +43,12 @@ fun HomeHeader(
     ) {
         Spacer(modifier = Modifier.height(8.dp))
         Text(
-            text = "We have prepared\nnew products for you \uD83C\uDF33",
+            text = buildAnnotatedString {
+                append("We have prepared\nnew products ")
+                withStyle(style = SpanStyle(color = MaterialTheme.colorScheme.primary)) {
+                    append("for you \uD83C\uDF33")
+                }
+            },
             style = MaterialTheme.typography.titleLarge
         )
         Spacer(modifier = Modifier.height(24.dp))
