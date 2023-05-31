@@ -9,6 +9,7 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import mobi.appcent.store.common.base.BaseScreen
+import mobi.appcent.store.ui.screen.getstarted.navigateToGetStarted
 import mobi.appcent.store.ui.screen.profile.components.ProfileContent
 
 /**
@@ -19,6 +20,11 @@ class ProfileScreen: BaseScreen<ProfileViewModel>() {
     override fun Screen() {
         val uiState by viewModel.uiState.collectAsState()
 
-        ProfileContent(uiState)
+        ProfileContent(
+            uiState = uiState,
+            onLogoutClicked = {
+                navigator.navigateToGetStarted()
+            }
+        )
     }
 }

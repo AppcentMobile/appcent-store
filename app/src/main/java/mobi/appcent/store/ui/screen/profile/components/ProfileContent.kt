@@ -14,6 +14,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import mobi.appcent.store.R
+import mobi.appcent.store.core.navigation.AppNavigator
 import mobi.appcent.store.ui.components.AppTopBar
 import mobi.appcent.store.ui.components.NavigationButton
 import mobi.appcent.store.ui.screen.profile.ProfileUiState
@@ -23,7 +24,8 @@ import mobi.appcent.store.ui.screen.profile.ProfileUiState
  */
 @Composable
 fun ProfileContent(
-    uiState: ProfileUiState
+    uiState: ProfileUiState,
+    onLogoutClicked: () -> Unit
 ) {
     Scaffold(
         topBar = {
@@ -62,7 +64,7 @@ fun ProfileContent(
             }
             Spacer(modifier = Modifier.height(32.dp))
             OutlinedButton(
-                onClick = { /*TODO*/ },
+                onClick = onLogoutClicked,
                 modifier = Modifier.align(Alignment.CenterHorizontally)
             ) {
                 Text(text = "Logout")

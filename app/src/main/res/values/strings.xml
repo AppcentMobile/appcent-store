@@ -1,6 +1,18 @@
 <resources>
     <string name="app_name">Appcent Store</string>
 
+    <!-- Button -->
+    <string name="btn_next">Next</string>
+    <string name="btn_skip">Skip</string>
+    <string name="btn_get_started">Get started</string>
+    
+    <!-- Onboarding -->
+    <string name="onboarding_title_1">Discover a World of Products</string>
+    <string name="onboarding_title_2">Seamless Shopping Experience</string>
+    <string name="onboarding_title_3">Exclusive Deals and Offers</string>
+    <string name="onboarding_desc_1">Uncover a vast collection of products from various categories, all in one place. From trendy fashion items to cutting-edge electronics, our app offers a diverse range of high-quality products to suit your needs and preferences.</string>
+    <string name="onboarding_desc_2">Enjoy a hassle-free shopping experience with our user-friendly app. Browse through a clean and intuitive interface, easily search for products, add them to your cart, and proceed to checkout seamlessly. Shopping has never been this convenient.</string>
+    <string name="onboarding_desc_3">Unlock incredible discounts and exclusive offers available only on our app. Stay updated with the latest promotions, flash sales, and seasonal deals. With our app, you\'ll always be one step ahead when it comes to grabbing the best bargains.</string>
 
     <!-- Home -->
     <string name="home_search_placeholder">Ürün, kategori veya marka ara</string>

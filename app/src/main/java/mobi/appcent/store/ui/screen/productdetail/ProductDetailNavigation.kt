@@ -1,6 +1,6 @@
 package mobi.appcent.store.ui.screen.productdetail
 
-import androidx.compose.animation.AnimatedContentScope
+import androidx.compose.animation.AnimatedContentTransitionScope
 import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.animation.core.tween
 import androidx.navigation.NavGraphBuilder
@@ -18,16 +18,16 @@ fun NavGraphBuilder.productDetailScreen(navigator: AppNavigator) {
     composable(
         route = Routes.productDetailRoute,
         enterTransition = {
-            slideIntoContainer(AnimatedContentScope.SlideDirection.Left, animationSpec = tween(700))
+            slideIntoContainer(AnimatedContentTransitionScope.SlideDirection.Left, animationSpec = tween(700))
         },
         exitTransition = {
-            slideOutOfContainer(AnimatedContentScope.SlideDirection.Right, animationSpec = tween(700))
+            slideOutOfContainer(AnimatedContentTransitionScope.SlideDirection.Right, animationSpec = tween(700))
         },
         popEnterTransition = {
-            slideIntoContainer(AnimatedContentScope.SlideDirection.Left, animationSpec = tween(1000))
+            slideIntoContainer(AnimatedContentTransitionScope.SlideDirection.Left, animationSpec = tween(1000))
         },
         popExitTransition = {
-            slideOutOfContainer(AnimatedContentScope.SlideDirection.Right, animationSpec = tween(1000))
+            slideOutOfContainer(AnimatedContentTransitionScope.SlideDirection.Right, animationSpec = tween(1000))
         }
     ) {
         ProductDetailScreen().Create(

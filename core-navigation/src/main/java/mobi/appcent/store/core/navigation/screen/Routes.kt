@@ -10,4 +10,8 @@ object Routes {
     const val collectionsRoute = "collections_route"
     const val profileRoute = "profile_route"
     const val productDetailRoute = "product_detail_route"
+    const val onBoardingRoute = "onboarding_route"
+    const val getStartedRoute = "get_started_route"
+    const val loginRoute = "login_route"
+    const val signUpRoute = "sign_up_route"
 }

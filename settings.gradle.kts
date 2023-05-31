@@ -18,3 +18,4 @@ dependencyResolutionManagement {
 rootProject.name = "AppcentStore"
 include(":app")
 include(":core-navigation")
+include(":core-preferences")

@@ -53,6 +53,7 @@ android {
 
 dependencies {
     implementation(project(":core-navigation"))
+    implementation(project(":core-preferences"))
 
     implementation(libs.core.ktx)
     implementation(libs.lifecycle.runtime.ktx)
@@ -65,6 +66,8 @@ dependencies {
     implementation(libs.material3.icon.ext)
     implementation(libs.compose.livedata)
     implementation(libs.accompanist.navigation.animation)
+    implementation(libs.accompanist.pager)
+    implementation(libs.accompanist.pager.indicator)
 
     implementation(libs.medusa.client.sdk)
     implementation(libs.coil)
