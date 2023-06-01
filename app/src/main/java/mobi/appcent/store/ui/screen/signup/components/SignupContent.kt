@@ -22,12 +22,14 @@ import androidx.compose.ui.text.SpanStyle
 import androidx.compose.ui.text.buildAnnotatedString
 import androidx.compose.ui.unit.dp
 import mobi.appcent.store.ui.components.AppTextField
+import mobi.appcent.store.ui.screen.signup.SignupViewModel
 
 /**
  * Created by erenalpaslan on 31.05.2023
  */
 @Composable
 fun SignupContent(
+    viewModel: SignupViewModel,
     onSignupClicked: () -> Unit,
     onLoginClicked: () -> Unit
 ) {
@@ -49,7 +51,9 @@ fun SignupContent(
                 verticalArrangement = Arrangement.Center
             ) {
                 AppTextField(
-                    onValueChanged = {},
+                    onValueChanged = { name ->
+                        viewModel.onNameChanged(name)
+                    },
                     placeholder = {
                         Text(text = "Firstname")
                     },
@@ -57,7 +61,9 @@ fun SignupContent(
                 )
                 Spacer(modifier = Modifier.height(16.dp))
                 AppTextField(
-                    onValueChanged = {},
+                    onValueChanged = { surname ->
+                        viewModel.onSurnameChanged(surname)
+                    },
                     placeholder = {
                         Text(text = "Lastname")
                     },
@@ -65,7 +71,9 @@ fun SignupContent(
                 )
                 Spacer(modifier = Modifier.height(16.dp))
                 AppTextField(
-                    onValueChanged = {},
+                    onValueChanged = { email ->
+                        viewModel.onEmailChanged(email)
+                    },
                     placeholder = {
                         Text(text = "Email")
                     },
@@ -73,7 +81,9 @@ fun SignupContent(
                 )
                 Spacer(modifier = Modifier.height(16.dp))
                 AppTextField(
-                    onValueChanged = {},
+                    onValueChanged = { password ->
+                        viewModel.onPasswordChanged(password)
+                    },
                     placeholder = {
                         Text(text = "Password")
                     },
@@ -81,7 +91,9 @@ fun SignupContent(
                 )
                 Spacer(modifier = Modifier.height(16.dp))
                 AppTextField(
-                    onValueChanged = {},
+                    onValueChanged = { phone ->
+                        viewModel.onPhoneChanged(phone)
+                    },
                     placeholder = {
                         Text(text = "Phone")
                     },
@@ -109,10 +121,10 @@ fun SignupContent(
                 contentAlignment = Alignment.Center
             ) {
                 Text(text = buildAnnotatedString {
-                        append("Already have an account?")
-                        pushStyle(SpanStyle(color = MaterialTheme.colorScheme.primary))
-                        append(" Sign in")
-                    },
+                    append("Already have an account?")
+                    pushStyle(SpanStyle(color = MaterialTheme.colorScheme.primary))
+                    append(" Sign in")
+                },
                     modifier = Modifier.clickable {
                         onLoginClicked()
                     }

@@ -1,5 +1,6 @@
 package mobi.appcent.store.ui.screen.getstarted.component
 
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -15,7 +16,9 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
+import mobi.appcent.store.R
 import mobi.appcent.store.core.navigation.AppNavigator
 import mobi.appcent.store.ui.screen.login.popLogin
 import mobi.appcent.store.ui.screen.signup.popSignup
@@ -36,6 +39,11 @@ fun GetStartedContent(
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
+            Image(
+                painter = painterResource(id = R.drawable.ill_get_started),
+                contentDescription = null,
+                modifier = Modifier.fillMaxWidth(0.8f)
+            )
             Text(text = "Hello!", style = MaterialTheme.typography.headlineLarge)
             Spacer(modifier = Modifier.height(16.dp))
             Button(

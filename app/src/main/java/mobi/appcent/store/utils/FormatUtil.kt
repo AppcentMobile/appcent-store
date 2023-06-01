@@ -1,4 +1,4 @@
-package mobi.appcent.store.utils.util
+package mobi.appcent.store.utils
 
 /**
  * Created by erenalpaslan on 25.03.2023

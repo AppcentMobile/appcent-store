@@ -3,6 +3,7 @@ package mobi.appcent.store.common.base
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import mobi.appcent.store.utils.Event
 import org.koin.core.component.KoinComponent
 
 /**
@@ -10,8 +11,8 @@ import org.koin.core.component.KoinComponent
  */
 open class BaseViewModel: ViewModel(), KoinComponent {
 
-    protected val _error: MutableLiveData<String?> = MutableLiveData()
-    val error: LiveData<String?> = _error
+    protected val _error: MutableLiveData<Event<String?>> = MutableLiveData()
+    val error: LiveData<Event<String?>> = _error
 
     private val _showProgress: MutableLiveData<Boolean> = MutableLiveData()
     val showProgress: LiveData<Boolean> = _showProgress
@@ -25,7 +26,7 @@ open class BaseViewModel: ViewModel(), KoinComponent {
     }
 
     fun removeError() {
-        _error.postValue(null)
+        //_error.postValue(null)
     }
 
 }

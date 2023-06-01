@@ -28,12 +28,14 @@ import androidx.compose.ui.text.SpanStyle
 import androidx.compose.ui.text.buildAnnotatedString
 import androidx.compose.ui.unit.dp
 import mobi.appcent.store.ui.components.AppTextField
+import mobi.appcent.store.ui.screen.login.LoginViewModel
 
 /**
  * Created by erenalpaslan on 30.05.2023
  */
 @Composable
 fun LoginContent(
+    viewModel: LoginViewModel,
     onLoginClicked: () -> Unit,
     onForgotPasswordClicked: () -> Unit,
     onSignupClicked: () -> Unit
@@ -56,7 +58,9 @@ fun LoginContent(
                 verticalArrangement = Arrangement.Center
             ) {
                 AppTextField(
-                    onValueChanged = {},
+                    onValueChanged = { email ->
+                        viewModel.onEmailChanged(email)
+                    },
                     placeholder = {
                         Text(text = "Email")
                     },
@@ -64,7 +68,9 @@ fun LoginContent(
                 )
                 Spacer(modifier = Modifier.height(16.dp))
                 AppTextField(
-                    onValueChanged = {},
+                    onValueChanged = { password ->
+                        viewModel.onPasswordChanged(password)
+                    },
                     placeholder = {
                         Text(text = "Password")
                     },
@@ -72,7 +78,9 @@ fun LoginContent(
                 )
             }
             Column(
-                modifier = Modifier.fillMaxSize().weight(1f),
+                modifier = Modifier
+                    .fillMaxSize()
+                    .weight(1f),
                 horizontalAlignment = Alignment.CenterHorizontally,
                 verticalArrangement = Arrangement.Center
             ) {
