@@ -71,6 +71,7 @@ dependencies {
 
     implementation(libs.medusa.client.sdk)
     implementation(libs.coil)
+    implementation(libs.shimmer.compose)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.test.ext.junit)

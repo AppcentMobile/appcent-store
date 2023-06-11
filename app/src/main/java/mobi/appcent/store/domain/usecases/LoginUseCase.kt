@@ -1,5 +1,6 @@
 package mobi.appcent.store.domain.usecases
 
+import android.util.Log
 import com.easylife.noty.utils.dispatchers.AppDispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
@@ -28,6 +29,7 @@ class LoginUseCase(
                 params.email,
                 params.password
             )
+            Log.d("ResponseControl", "LOGIN DATA => ${response?.data}")
             emit(AppResult.Success(response?.data?.customer))
         }catch (e: Exception) {
             emit(AppResult.Error(e.message))

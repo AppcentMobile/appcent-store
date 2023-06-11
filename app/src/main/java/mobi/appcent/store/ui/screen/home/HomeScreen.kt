@@ -15,9 +15,11 @@ class HomeScreen: BaseScreen<HomeViewModel>() {
     @Composable
     override fun Screen() {
         val uiState by viewModel.uiState.collectAsState()
+        val collectionUiState by viewModel.collectionUiState.collectAsState()
 
         HomeContent(
             uiState = uiState,
+            collectionUiState = collectionUiState,
             viewModel = viewModel
         )
     }

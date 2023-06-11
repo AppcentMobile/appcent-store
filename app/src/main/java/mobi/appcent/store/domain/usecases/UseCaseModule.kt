@@ -10,4 +10,5 @@ import org.koin.dsl.module
 val useCaseModule = module {
     factoryOf(::RegisterUseCase)
     factoryOf(::LoginUseCase)
+    factoryOf(::GetCollectionsUseCase)
 }

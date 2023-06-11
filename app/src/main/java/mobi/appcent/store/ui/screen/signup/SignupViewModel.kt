@@ -35,7 +35,7 @@ class SignupViewModel(
                 phone = _uiState.value.phone
             )).collect {result ->
                 when(result) {
-                    is AppResult.Error -> _error.postEvent(result.message)
+                    is AppResult.Error -> _error.postValue(result.message)
                     is AppResult.Success -> _onRegisterSuccess.postEvent(true)
                 }
             }

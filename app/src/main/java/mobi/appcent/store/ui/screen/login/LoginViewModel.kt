@@ -33,7 +33,7 @@ class LoginViewModel(
                 password = _uiState.value.password
             )).collect { result ->
                 when(result) {
-                    is AppResult.Error -> _error.postEvent(result.message)
+                    is AppResult.Error -> _error.postValue(result.message)
                     is AppResult.Success -> _onLoginSuccess.postEvent(true)
                 }
             }

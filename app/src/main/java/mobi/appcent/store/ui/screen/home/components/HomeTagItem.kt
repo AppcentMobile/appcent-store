@@ -4,6 +4,7 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.defaultMinSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
@@ -18,6 +19,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
+import mobi.appcent.medusa.store.model.response.ProductCollection
 import mobi.appcent.store.data.model.ProductTag
 
 /**
@@ -25,9 +27,9 @@ import mobi.appcent.store.data.model.ProductTag
  */
 @Composable
 fun HomeTagItem(
-    tag: ProductTag,
+    tag: ProductCollection?,
     selected: Boolean,
-    onClick: (ProductTag) -> Unit
+    onClick: (ProductCollection?) -> Unit
 ) {
     Card(
         onClick = {
@@ -47,7 +49,7 @@ fun HomeTagItem(
             )
             Spacer(modifier = Modifier.width(4.dp))
             Text(
-                text = tag.name,
+                text = tag?.title ?: "",
                 style = MaterialTheme.typography.labelLarge
             )
         }

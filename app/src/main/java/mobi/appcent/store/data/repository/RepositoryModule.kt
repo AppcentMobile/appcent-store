@@ -1,6 +1,7 @@
 package mobi.appcent.store.data.repository
 
 import mobi.appcent.store.domain.repository.CustomerRepository
+import mobi.appcent.store.domain.repository.ProductRepository
 import org.koin.core.module.dsl.factoryOf
 import org.koin.dsl.module
 
@@ -9,4 +10,5 @@ import org.koin.dsl.module
  */
 val repositoryModule = module {
     factory<CustomerRepository> { CustomerRepositoryImpl(get()) }
+    factory<ProductRepository> { ProductRepositoryImpl(get()) }
 }

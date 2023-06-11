@@ -40,6 +40,7 @@ import mobi.appcent.store.data.model.ProductTag
 import mobi.appcent.store.ui.components.AppTopBar
 import mobi.appcent.store.ui.components.ProductList
 import mobi.appcent.store.ui.components.SquaredIconButton
+import mobi.appcent.store.ui.screen.home.CollectionsUiState
 import mobi.appcent.store.ui.screen.home.HomeUiState
 import mobi.appcent.store.ui.screen.home.HomeViewModel
 import mobi.appcent.store.ui.theme.outerSpace
@@ -51,6 +52,7 @@ import mobi.appcent.store.ui.theme.red
 @Composable
 fun HomeContent(
     uiState: HomeUiState,
+    collectionUiState: CollectionsUiState,
     viewModel: HomeViewModel
 ) {
     Scaffold(
@@ -95,13 +97,8 @@ fun HomeContent(
                 }
             )
             HomeTagList(
-                list = listOf(
-                    ProductTag("All"),
-                    ProductTag("Newest"),
-                    ProductTag("Popular"),
-                    ProductTag("Man"),
-                    ProductTag("Woman")
-                ),
+                isLoading = collectionUiState.isLoading,
+                list = collectionUiState.list,
                 onTagSelectionChanged = { selectedTag ->
 
                 }

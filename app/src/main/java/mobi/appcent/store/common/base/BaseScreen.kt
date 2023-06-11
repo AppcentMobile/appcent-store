@@ -34,14 +34,14 @@ abstract class BaseScreen<VM : BaseViewModel> {
 
         val error by viewModel.error.observeAsState()
 
-        error?.getContentIfNotHandled()?.let { message ->
+        if (error != null) {
             AlertDialog(
                 onDismissRequest = {
                     viewModel.removeError()
                 },
                 title = {},
                 text = {
-                    Text(text = message)
+                    Text(text = error ?: "")
                 },
                 properties = DialogProperties(),
                 confirmButton = {},
